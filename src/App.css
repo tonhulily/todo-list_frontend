@@ -1,0 +1,261 @@
+/* src/App.css */
+/* Đảm bảo box-sizing được áp dụng toàn cục để tính toán kích thước chính xác */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Đã thay đổi font để phù hợp với hướng dẫn */
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5; /* Màu nền nhẹ nhàng hơn */
+  /* Đảm bảo body không có overflow ngang */
+  overflow-x: hidden;
+  justify-content: center;
+}
+
+/* Đảm bảo toàn bộ ứng dụng chiếm ít nhất 100% chiều cao viewport */
+#root, .d-flex.flex-column.min-vh-100 {
+  height: 100%;
+  width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
+  overflow-x: hidden; /* Ngăn chặn cuộn ngang ở cấp độ cao nhất */
+}
+
+/* Thêm style cho header mới */
+.stylish-header {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  padding: 1.5rem !important; /* Tăng padding để header dày hơn */
+  border-bottom-left-radius: 25px; /* Bo tròn góc dưới bên trái */
+  border-bottom-right-radius: 25px; /* Bo tròn góc dưới bên phải */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.stylish-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.bg-primary {
+  background-color: #007bff !important;
+}
+
+.bg-dark {
+  background-color: #343a40 !important;
+}
+
+/* Thẻ Card */
+.card {
+  border: none; /* Bỏ viền mặc định của card */
+  border-radius: 12px; /* Góc bo tròn lớn hơn cho card */
+  overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài góc bo tròn */
+}
+
+/* Form controls */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+.form-control-lg {
+  height: auto;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+  font-weight: 600; /* Chữ đậm hơn */
+}
+
+.btn:hover {
+  transform: translateY(-2px); /* Hiệu ứng nhấc lên nhẹ */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Bóng đổ mạnh hơn */
+}
+
+.btn-primary {
+  background-color: #007bff !important;
+  border-color: #007bff !important;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9 !important;
+  border-color: #0062cc !important;
+}
+
+.btn-danger {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+}
+
+.btn-danger:hover {
+  background-color: #c82333 !important;
+  border-color: #bd2130 !important;
+}
+
+.btn-success {
+  background-color: #28a745 !important;
+  border-color: #28a745 !important;
+}
+
+.btn-success:hover {
+  background-color: #218838 !important;
+  border-color: #1e7e34 !important;
+}
+
+/* Table */
+.table-responsive {
+  border-radius: 12px; /* Góc bo tròn cho bảng */
+  overflow-x: auto; /* Cho phép cuộn ngang nếu bảng quá rộng */
+  border: 1px solid #dee2e6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Bóng đổ nhẹ cho bảng */
+}
+
+.table {
+  margin-bottom: 0; /* Loại bỏ margin dưới cùng của bảng */
+  width: 100%; /* Đảm bảo bảng chiếm 100% chiều rộng của container */
+  min-width: 500px; /* Đặt một chiều rộng tối thiểu cho bảng để tránh quá nhỏ trên di động */
+}
+
+.table th, .table td {
+  vertical-align: middle;
+  padding: 1rem; /* Tăng padding cho ô bảng */
+}
+
+.table thead th {
+  background-color: #e9ecef;
+  color: #495057;
+  font-weight: 700; /* Chữ đậm hơn cho tiêu đề cột */
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody tr:hover {
+  background-color: #e2e6ea;
+  cursor: pointer;
+}
+
+.complete-btn {
+  min-width: 120px;
+}
+
+.complete-btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.7; /* Giảm độ mờ khi bị vô hiệu hóa */
+  transform: none; /* Bỏ hiệu ứng hover khi bị vô hiệu hóa */
+  box-shadow: none;
+}
+
+/* Badges */
+.badge {
+  padding: 0.5em 0.8em;
+  font-size: 0.85em;
+  font-weight: 600;
+  border-radius: 50rem; /* Bo tròn hoàn toàn */
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 12px; /* Góc bo tròn cho modal */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bóng đổ mạnh hơn cho modal */
+}
+
+.modal-header {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.modal-footer {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* Tối ưu hóa cho màn hình nhỏ (điện thoại) */
+@media (max-width: 767px) {
+  /* Đảm bảo main content có padding phù hợp */
+  main {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  /* Điều chỉnh padding cho container chính trên màn hình nhỏ */
+  .container {
+    padding-left: 0px !important; /* Loại bỏ padding của container */
+    padding-right: 0px !important; /* Loại bỏ padding của container */
+  }
+
+  /* Điều chỉnh kích thước font và padding cho bảng */
+  .table th, .table td {
+    padding: 0.4rem; /* Giảm padding cho ô bảng */
+    font-size: 0.7rem; /* Giảm kích thước font cho ô bảng */
+  }
+
+  /* Đảm bảo nội dung trong ô bảng tự động xuống dòng */
+  .table td {
+    word-break: break-word;
+    white-space: normal; /* Cho phép xuống dòng */
+  }
+
+  .btn-sm {
+    padding: 0.2rem 0.4rem; /* Giảm padding cho nút nhỏ */
+    font-size: 0.6rem; /* Giảm kích thước font cho nút nhỏ */
+  }
+  .complete-btn {
+    min-width: 60px; /* Giảm min-width cho nút trên di động */
+  }
+  .card-title {
+    font-size: 1rem; /* Điều chỉnh kích thước tiêu đề card */
+  }
+  h1 {
+    font-size: 1.5rem; /* Điều chỉnh kích thước tiêu đề chính */
+  }
+
+  /* Điều chỉnh khoảng cách giữa các nút hành động */
+  .d-flex.justify-content-center.align-items-center.flex-nowrap.gap-2 {
+    gap: 0.3rem !important; /* Giảm khoảng cách giữa các nút */
+    flex-wrap: wrap; /* Cho phép các nút xuống hàng nếu không đủ chỗ */
+  }
+
+  /* Điều chỉnh Col để chiếm toàn bộ chiều rộng có sẵn */
+  .col-sm-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Điều chỉnh tiêu đề header */
+  header h1 {
+    font-size: 1.5rem;
+    padding: 10px 0;
+  }
+}
+
+/* Tối ưu hóa cho màn hình tablet (iPad,...) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .table th, .table td {
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+  .complete-btn {
+    min-width: 100px;
+  }
+}
+
+/* Cài đặt chiều rộng tối đa cho container trên màn hình máy tính */
+@media (min-width: 992px) {
+  .container {
+    max-width: 800px !important; /* Thêm !important để đảm bảo ghi đè các style khác */
+  }
+}
