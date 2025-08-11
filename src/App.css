@@ -200,7 +200,7 @@ body {
   /* Điều chỉnh kích thước font và padding cho bảng */
   .table th, .table td {
     padding: 0.4rem; /* Giảm padding cho ô bảng */
-    font-size: 14px; /* Giảm kích thước font cho ô bảng */
+    font-size: 13px; /* Giảm kích thước font cho ô bảng */
   }
 
   /* Đảm bảo nội dung trong ô bảng tự động xuống dòng */
