@@ -5,7 +5,7 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 
 import './App.css';
 
-const API_URL = 'http://localhost:8080/tasks';
+const API_URL = 'https://todo-api-go-4ki3.onrender.com';
 
 function App() {
   const [tasks, setTasks] = useState([]);
