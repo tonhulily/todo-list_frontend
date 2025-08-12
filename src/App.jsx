@@ -63,9 +63,7 @@ function App() {
     if (taskToDelete) {
       try {
         await axios.delete(`${API_URL}/${taskToDelete.id}`);
-        // fetchTasks();
-        setTasks(prevTasks => prevTasks.filter(task => task.id !== taskToDelete.id));
-        setErrorMessage(''); // Xóa thông báo lỗi nếu có  
+        fetchTasks();
       } catch (error) {
         console.error('Error deleting task:', error);
       } finally {
